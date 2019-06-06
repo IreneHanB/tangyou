@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link href="/public/css/bootstrap.min.css" rel="stylesheet" />
+<!-- <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">  -->
+<link href="/public/css/flexslider.css" rel="stylesheet" /> 
+<link href="/public/css/style.css" rel="stylesheet" />
+<style type="text/css">
+    #list{
+  text-align: center;
+  overflow: hidden;
+  height: 60px;
+
+}
+#list>.item{
+  text-align: right;
+  font-weight: 400;
+  color: #005d5e;
+  /*background-color: rgba(0,93,94,0.5);*/
+}
+#list:hover{
+    height: 224px;
+    transition: height 0.3s;
+
+}
+.guidesouth{
+    height: 30px;
+    width: 170px;
+    border-radius: 3px;
+    border:1px solid #008888;
+    margin:10px 0 0 100px;
+}
+.titleright{
+            display:block;
+            float: right;
+            padding-right: 16px;
+            /* height: 10px; */
+            padding-bottom: 10px;
+        }
+        .titleright span{
+            /*background-color: #005d5e;*/
+            color:#005d5e;
+            padding: 2px 10px 2px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            /*margin-bottom: 10px;*/
+        }
+        .tltleright a{
+            color:#005d5e;
+            text-decoration: none;
+        }
+</style>
+
+</head>
+<body>
+<div id="wrapper" class="home-page">
+	<!-- start header -->
+	<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/views/index.html"><img src="/public/img/logo2.png" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse " id="daohang">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">首页</a></li> 
+						<li id="list">
+                          <a class="guide" href="one.html" style="cursor: default;">糖友指南</a>
+
+                          <a href="one.html" class="item">1型糖尿病</a>
+                          <a href="two.html" class="item">2型糖尿病</a>
+                          <a href="renshen.html" class="item">妊娠糖尿病</a>
+                          <a href="other.html" class="item">其他</a>
+                        </li>
+						<!-- <li><a href="#">糖友学院</a></li> -->
+                        <li><a href="/story">糖友故事</a></li>
+                        <li><a href="#">个人资料</a></li>
+                        <li><a href="/logout">登录</a></li>
+                    </ul>
+                </div>
+               
+            </div>
+            <div class="titleright">
+               {{ if user }}
+               <P>您好，<strong>{{ user.nickname }}</strong>&nbsp;&nbsp;欢迎登录  
+                <a class="btn btn-primary navbar-btn" href="/login">退出</a>
+            </P>
+               <span> </span>
+               {{ else }}     
+               <p>您好，欢迎<a class="btn btn-primary navbar-btn" href="/register">注册</a></p>
+                {{ /if }}
+            </div>
+        </div>
+        
+	</header>
+	
+	<section id="banner">
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
+              <li>
+                <img src="/public/img/slides/1.jpg" alt="" />
+                <div class="flex-caption container">
+                    <h3 style="font-size: 18px;">[táng niào bìng]</h3> 
+                    <h3>糖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;尿&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 病</h3> 
+					<p>糖尿病是一组以高血糖为特征的代谢性疾病。高血糖则是由于胰岛素分泌缺陷或其生物作用受损，或两者兼有引起。糖尿病时长期存在的高血糖，导致各种组织，特别是眼、肾、心脏、血管、神经的慢性损害、功能障碍。</p>  
+                </div>
+              </li>
+              <li>
+                <img src="/public/img/slides/2.jpg" alt="" />
+                <div class="flex-caption container">
+                    <h3>糖尿病并发症</h3> 
+					<p>长期血糖增高，大血管、微血管受损并危及心、脑、肾、周围神经、眼睛、足等，据世界卫生组织统计，糖尿病并发症高达100多种，是目前已知并发症最多的一种疾病。糖尿病死亡者有一半以上是心脑血管所致，10%是肾病变所致。因糖尿病截肢的患者是非糖尿病的10～20倍。临床数据显示，糖尿病发病后10年左右，将有30%～40%的患者至少会发生一种并发症，且并发症一旦产生，药物治疗很难逆转，因此强调尽早预防糖尿病并发症。</p>  					
+                </div>
+              </li>
+              <li>
+                <img src="/public/img/slides/3.jpg" alt="" />
+                <div class="flex-caption container">
+                    <h3>糖尿病早期症状</h3> 
+					<p>1.体重下降:主要是因为患者的身体的葡萄糖不能够充分的被利用,使得脂肪和蛋白质加速的分解,消耗的也非常多,体重也会出现严重下降,所以会出现消瘦的情况。
+                    <br>2.饮水增多:因为患者的尿日益增多,使得水分丢失的非常多,细胞内脱水现象严重,高血糖指标加重,刺激口渴中枢,导致口渴而多饮,这是糖尿病的症状之一。
+                    <br>3.皮肤:糖尿病早期症状在患者的皮肤上的表现一般比较明显:下肢、足部溃疡可能长期得不到治愈;或者可能伴有反复的皮肤、外阴感染;皮肤擦伤或抓破后不容易得到愈合,或者出现龟头炎、外阴炎、阴道炎等反复发作。
+                   
+                    <br>......</p>  
+                </div>
+              </li>
+            
+            </ul>
+        </div>
+	
+ 
+	</section>
+	
+	<section class="txt-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="aligncenter"><h1 class="aligncenter">食谱“三宜三不宜”</h1>俗话说：“民以食为天”，对糖尿病患者而言，正确地吃饭，是调治糖尿病的关键环节，控制得好坏直接影响病情发展。</div>			
+			</div>
+		</div>
+	</div>
+	</section>
+	
+	
+	<section id="services">
+	<div class="container">
+		<div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 0ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <img src="/public/img/1.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">宜食用五谷杂粮</h4>
+                                <p>莜麦面、荞麦面、燕麦片、玉米面、紫山药等富含维生素B、多种微量元素及食物纤维，以低糖，低淀粉的食物或者粗粮以及蔬菜等做主食。</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 100ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                 <img src="/public/img/2.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">宜食用豆类及豆制品</h4>
+                                <p>豆类食品富含蛋白质、无机盐和维生素，且豆油含不饱和脂肪酸，能降低血清胆固醇及甘油三酯。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="200ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 200ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <img src="/public/img/3.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">宜食用以下蔬菜</h4>
+                                <p>苦瓜、桑叶、洋葱、香菇、柚子、南瓜可降低血糖，是糖尿病人最理想食物，如能长期食用，则降血糖和预防并发症的效果会更好。</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 300ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                 <img src="/public/img/4.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">不宜吃甜食</h4>
+                                <p>不宜吃各种糖、蜜饯、水果罐头、汽水、果汁、果酱、冰淇淋、甜饼干、甜面包及糖制糕点还有无糖饼干、无糖食物之类的，基本都含大量淀粉，因为这些食品含糖很高，食用易出现高血糖</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="400ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 400ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                 <img src="/public/img/5.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">不宜吃含高胆固醇的食物及动物脂肪</h4>
+                                <p>如动物的脑、肝、心、肺、腰、蛋黄、肥肉、黄油、猪牛羊油等，这些食物易使血脂升高，易发生动脉粥样硬化；</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="500ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 500ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <img src="/public/img/7.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">不宜饮酒</h4>
+                                <p>酒精能使血糖发生波动，空腹大量饮酒时，可发生严重的低血糖，而且醉酒往往能掩盖低血糖的表现，不易发现，非常危险。</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div>
+            </div>	 
+	 
+
+	</div>
+	
+	</section>
+	<section class="middle"> </section>
+	<section class="aboutUs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="aligncenter"><h2 class="aligncenter">糖友指南</h2>请完善您的个人资料，为您提供相应指南！</div>
+				<br/>
+			</div>
+		</div> 
+		<div class="row" style="padding-bottom: 60px;">
+							<div class="col-md-6">
+								<img src="/public/img/630.png" alt="">
+								<div class="space"></div>
+							</div>
+							<div class="col-md-6">
+
+                            <script type="text/javascript">
+                            function check() {
+                                var option = document.getElementsByClassName("option");
+                                for(var i = 0; i < option.length; i++) {
+                                    if(option[i].checked) {
+                                        if(option[i].value === "1") {
+                                            location.href = "one.html";
+                                        }
+                                        else if(option[i].value === "2") {
+                                            location.href = "two.html";
+                                        }
+                                        else if(option[i].value === "3") {
+                                            location.href = "renshen.html";
+                                        }
+                                        else if(option[i].value === "4") {
+                                            location.href = "other.html";
+                                        }
+                                    }
+                                }
+                            }
+                            
+
+      
+                            </script>
+                            <form method="post" onsubmit="return allok()">
+                            <table border="1">
+                                <tr>
+                                    <td>昵称：<input type="text" name="" ></td>
+                                </tr>
+                                <tr>
+                                    <td>性别：<input type="radio" name="sex">男 <input type="radio" name="sex">女</td>
+                                    <td style="width:150px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>身高：<input type="text" name="">cm</td>
+                                    <td style="width:150px;">*请填写有效正确信息</td>
+                                </tr>
+                                <tr>
+                                    <td>体重：<input type="text" name="">kg</td>
+                                    <td style="width:150px;">*请填写有效正确信息</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        患病类型：<input class="option" name="12" type="radio" value="1" /> 1型糖尿病
+                                        <input class="option" name="12" type="radio" value="2" /> 2型糖尿病
+                                        <input class="option" name="12" type="radio" value="3" /> 妊娠糖尿病
+                                        <input class="option" name="12" type="radio" value="4" /> 其他
+                                    </td>
+                                    
+                                </tr>
+                            </table>
+                            <input class="guidesouth" name="submit" id="submit" type="button" value="查看指南" onclick="check()" />
+                        </form>
+							</div>
+						</div>
+	
+	</div>
+	</section>
+	<section class="middle"> </section>
+	<section id="events">
+	<div class="container">
+	<div class="row">
+			<div class="col-md-12">
+				<div class="aligncenter"><h2 class="aligncenter">糖尿病研究领域最新进展</h2>从一开始的不治之症到现如今可预可控的慢性疾病，人类在与糖尿病斗争的中取得了不小的成就，但依然没<br>有办法彻底治愈。随着科技的进步，新的治疗方法涌现，不断给出人们“治愈”的希望。</div>
+				<br>
+			</div>
+		</div>
+	<div class="row" class="eventsLink">
+                <div class="col-md-4">
+                    <div class="post3">
+                        <img src="/public/img/e1.png" alt="">
+                        <a href="#">
+                            <time datetime="2016-03-01">
+                                <span class="year">显著降糖减重，礼来糖尿病新药3期结果积极</span>
+                                <span class="month"></span>
+                            </time>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;礼来公司公开了一项新临床研究,2型糖尿病新药Trulicity在添加到钠-葡萄糖协同转运蛋白-2抑制剂的治疗中时，显著改善了患者超过2至3个月平均血糖浓度。</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="post3">
+                        <img src="/public/img/e2.png" alt="">
+                        <a href="#">
+                            <time datetime="2016-03-01">
+                                <span class="year">口服索马鲁肽3期临床抵达主要终点</span>
+                                <span class="month"></span>
+                            </time>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诺和诺德 (Novo Nordisk) 最近公布了第一项使用口服索马鲁肽治疗2型糖尿病成人患者的3a期临床试验PIONEER 1的顶线结果。在患者体内会出现胰岛素抵抗的现象，使用其他降糖药物控制血糖。</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="post3">
+                        <img src="/public/img/e3.png" alt="">
+                        <a href="#">
+                            <time datetime="2016-03-01">
+                                <span class="year">微球体包装技术保持移植胰岛活性长达21天</span>
+                                <span class="month"></span>
+                            </time>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;伊利诺伊大学（University of Illinois）的研究者开发出一种新技术，能对胰岛细胞进行包装，在给其提供氧气和养料的同时，防止其被受体免疫细胞攻击。</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+	</div>
+	</section> 
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">联系我们</h5>
+					<address>
+					<strong>糖友e家</strong><br>
+					吉林省长春市朝阳区<br>
+					长春工业大学林园校区</address>
+					<p>
+						<i class="icon-phone"></i> 155 - 4312 - 8697 <br>
+						<i class="icon-envelope-alt"></i> IreneHanB@163.com
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">糖友e家</h5>
+					<ul class="link-list">
+						<li><a href="#">首页</a></li>
+						<li><a href="#">糖友指南</a></li>
+						<li><a href="#">糖友故事</a></li>
+						<li><a href="#">个人资料</a></li>
+						<li><a href="#">登录</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">遵照医嘱，按时服药，定期监测。</h5>
+					<ul class="link-list">
+						<li>糖尿病可以治愈？</li>
+						<li>不可治愈！</li>
+						<li>糖尿病不可治愈，可以控制。遵照医嘱，按时服药，定期监测。这样可以在最大程度上控制糖尿病的发展，减少糖尿病并发症的出现。毕竟糖尿病的并发症都是很可怕的！</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">控制饮食是最好的药物</h5>
+					<ul class="link-list">
+						<li>控制饮食没错，药物还需要继续服用</li>
+						<li>糖尿病患者控制饮食的目的是什么？是为了控制血糖，减轻胰岛素β细胞负担。</li>
+						<li>治疗糖尿病需要多方面综合治疗，包括饮食、运动、药物、自我监测、健康教育等，五者缺一不可。</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							Copyright &copy; 2018.长春工业大学 <a href="#" target="_blank" title=""></a> - Collect from <a href="" title="" target="_blank">Irene Han</a>
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<ul class="social-network">
+						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/jquery.easing.1.3.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/jquery.fancybox.pack.js"></script>
+<script src="/public/js/jquery.fancybox-media.js"></script> 
+<script src="/public/js/portfolio/jquery.quicksand.js"></script>
+<script src="/public/js/portfolio/setting.js"></script>
+<script src="/public/js/jquery.flexslider.js"></script>
+<script src="/public/js/animate.js"></script>
+<script src="/public/js/custom.js"></script> 
+</body>
+</html>
